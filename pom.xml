@@ -39,6 +39,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <git-commit-id-maven-plugin.version>9.0.2</git-commit-id-maven-plugin.version>
+        <gitPropertiesFilename>${project.build.outputDirectory}/git-${project.artifactId}-${project.version}.properties</gitPropertiesFilename>
     </properties>
 
     <dependencies>
@@ -129,7 +130,7 @@
                     <configuration>
                         <verbose>true</verbose>
                         <generateGitPropertiesFile>true</generateGitPropertiesFile>
-                        <generateGitPropertiesFilename>${project.build.outputDirectory}/git-${project.artifactId}-${project.version}.properties</generateGitPropertiesFilename>
+                        <generateGitPropertiesFilename>${gitPropertiesFilename}</generateGitPropertiesFilename>
                         <commitIdGenerationMode>full</commitIdGenerationMode>
                     </configuration>
                 </plugin>
